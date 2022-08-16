@@ -22,24 +22,32 @@ extension ViewController {
     
     func storageInfoViewConstraints() {
         NSLayoutConstraint.activate([
-            yourStorageInfo.topAnchor.constraint(equalTo: view.topAnchor, constant: 82),
+            yourStorageInfo.bottomAnchor.constraint(equalTo: duplicatesScreenshotsButton.topAnchor, constant: -20),
             yourStorageInfo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             yourStorageLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 18),
             yourStorageLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 48),
+            
             percentageLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 50),
             percentageLabel.centerXAnchor.constraint(equalTo: yourStorageInfo.centerXAnchor),
+            
             TotalMemoryLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 117),
             TotalMemoryLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 42),
+            
             availableLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 135),
             availableLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 65),
+            
             trashSizeLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 153),
             trashSizeLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 58),
+            
             totalMemoryValueLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 117),
             totalMemoryValueLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 119),
+            
             availableValueLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 135),
             availableValueLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 119),
+            
             trashSizeValueLabel.topAnchor.constraint(equalTo: yourStorageInfo.topAnchor, constant: 153),
-            trashSizeValueLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 119)
+            trashSizeValueLabel.leftAnchor.constraint(equalTo: yourStorageInfo.leftAnchor, constant: 119),
         ])
     }
     
@@ -47,7 +55,7 @@ extension ViewController {
     func duplicatesPhotoButtonConstraints() {
         NSLayoutConstraint.activate([
             duplicatesPhotosButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 11),
-            duplicatesPhotosButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 349),
+            duplicatesPhotosButton.bottomAnchor.constraint(equalTo: allPhotosButton.topAnchor, constant: -73),
             triangle.centerXAnchor.constraint(equalTo: duplicatesPhotosButton.centerXAnchor),
             triangle.centerYAnchor.constraint(equalTo: duplicatesPhotosButton.centerYAnchor),
             ellipse.centerXAnchor.constraint(equalTo: duplicatesPhotosButton.centerXAnchor),
@@ -66,8 +74,9 @@ extension ViewController {
     
     func duplicatesScreenshotsButtonConstraints() {
         NSLayoutConstraint.activate([
-            duplicatesScreenshotsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 301),
+            duplicatesScreenshotsButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             duplicatesScreenshotsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             triangle2.centerXAnchor.constraint(equalTo: duplicatesScreenshotsButton.centerXAnchor),
             triangle2.centerYAnchor.constraint(equalTo: duplicatesScreenshotsButton.centerYAnchor),
             ellipse2.centerXAnchor.constraint(equalTo: duplicatesScreenshotsButton.centerXAnchor),
@@ -86,7 +95,7 @@ extension ViewController {
     
     func duplicatesContactsButtonConstraints() {
         NSLayoutConstraint.activate([
-            duplicatesContactsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 341),
+            duplicatesContactsButton.bottomAnchor.constraint(equalTo: allVideosButton.topAnchor, constant: -73),
             duplicatesContactsButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -11),
             triangle3.centerXAnchor.constraint(equalTo: duplicatesContactsButton.centerXAnchor),
             triangle3.centerYAnchor.constraint(equalTo: duplicatesContactsButton.centerYAnchor),
@@ -107,7 +116,7 @@ extension ViewController {
     func secretStorageButtonConstraints() {
         NSLayoutConstraint.activate([
             secretStorageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            secretStorageButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 422),
+            secretStorageButton.topAnchor.constraint(equalTo: duplicatesScreenshotsButton.bottomAnchor, constant: 10),
             imageSecretStorage.topAnchor.constraint(equalTo: secretStorageButton.topAnchor, constant: 12),
             imageSecretStorage.centerXAnchor.constraint(equalTo: secretStorageButton.centerXAnchor),
             secretStorageLabel.topAnchor.constraint(equalTo: imageSecretStorage.bottomAnchor, constant: 10),
@@ -119,7 +128,7 @@ extension ViewController {
     func allPhotosButtonConstraints() {
         NSLayoutConstraint.activate([
             allPhotosButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 53),
-            allPhotosButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 533),
+            allPhotosButton.topAnchor.constraint(equalTo: secretStorageButton.bottomAnchor, constant: 0),
             imageAllPhoto.topAnchor.constraint(equalTo: allPhotosButton.topAnchor, constant: 16),
             imageAllPhoto.centerXAnchor.constraint(equalTo: allPhotosButton.centerXAnchor),
             allPhotoLabel.topAnchor.constraint(equalTo: imageAllPhoto.bottomAnchor, constant: 10),
@@ -131,7 +140,7 @@ extension ViewController {
     func allVideosButtonConstraints() {
         NSLayoutConstraint.activate([
             allVideosButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -67),
-            allVideosButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 533),
+            allVideosButton.topAnchor.constraint(equalTo: secretStorageButton.bottomAnchor, constant: 0),
             imageAllVideos.topAnchor.constraint(equalTo: allVideosButton.topAnchor, constant: 16),
             imageAllVideos.centerXAnchor.constraint(equalTo: allVideosButton.centerXAnchor),
             allVideosLabel.topAnchor.constraint(equalTo: imageAllVideos.bottomAnchor, constant: 10),
