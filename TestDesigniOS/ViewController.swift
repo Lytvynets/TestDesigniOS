@@ -37,10 +37,18 @@ class ViewController: UIViewController {
     
     
     //MARK: - duplicatesPhotos Button
+    lazy var duplicatesPhotosButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("", for: .normal)
+        button.backgroundColor = .white
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var duplicatesPhotosLabel: UILabel = {
         let label = UILabel()
         label.text = "Duplicates photos"
-        label.font = UIFont.systemFont(ofSize: 10)
         label.textColor = #colorLiteral(red: 0.2954347432, green: 0.312394917, blue: 0.6748702526, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,7 +57,6 @@ class ViewController: UIViewController {
     lazy var filesPhotosCountLabel: UILabel = {
         var label = UILabel()
         label.text = "30 files"
-        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -58,19 +65,11 @@ class ViewController: UIViewController {
     lazy var duplicatesPhotoCountLabel: UILabel = {
         let label = UILabel()
         label.text = "20 files"
-        label.font = UIFont.systemFont(ofSize: 8)
         label.textColor = #colorLiteral(red: 0.2462522984, green: 0.2462522984, blue: 0.2462522984, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var duplicatesPhotos: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "Ellipse 1"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
-        image.clipsToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
     
     lazy var duplicatesPhotosImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Group-1"))
@@ -79,18 +78,9 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var duplicatesPhotosButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     
     lazy var ellipse: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Ellipse 2"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -104,6 +94,14 @@ class ViewController: UIViewController {
     
     
     //MARK: - duplicates Screenshots Button
+    lazy var duplicatesScreenshotsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(testPush), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var duplicatesScreenshotsLabel: UILabel = {
         let label = UILabel()
         label.text = "Duplicates screenshots"
@@ -131,13 +129,6 @@ class ViewController: UIViewController {
         return label
     }()
     
-    lazy var duplicatesScreenshots: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "Ellipse 1"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
-        image.clipsToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
     
     lazy var duplicatesScreenshotsImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Group 202"))
@@ -146,19 +137,11 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var duplicatesScreenshotsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(testPush), for: .touchUpInside)
-        return button
-    }()
+  
     
     lazy var ellipse2: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Ellipse 2"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -172,6 +155,14 @@ class ViewController: UIViewController {
     
     
     //MARK: - duplicates Contacts Button
+    lazy var duplicatesContactsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
     lazy var duplicatesContactsLabel: UILabel = {
         let label = UILabel()
         label.text = "Duplicates contacts"
@@ -199,13 +190,6 @@ class ViewController: UIViewController {
         return label
     }()
     
-    lazy var duplicatesContacts: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "Ellipse 1"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
-        image.clipsToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
     
     lazy var duplicatesContactsImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Group-2"))
@@ -214,19 +198,10 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var duplicatesContactsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.mask = ellipse
-        return button
-    }()
+    
     
     lazy var ellipse3: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Ellipse 2"))
-        image.frame = CGRect(x: 0, y: 0, width: 111, height: 111)
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -254,7 +229,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Your Storage"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -263,7 +237,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "23 %"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 57)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -272,7 +245,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Total memory:"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 0.8206393123, green: 0.8206391931, blue: 0.8206391931, alpha: 1)
         return label
     }()
@@ -281,7 +253,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Available:"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 0.8206393123, green: 0.8206391931, blue: 0.8206391931, alpha: 1)
         return label
     }()
@@ -290,7 +261,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Trash size:"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 0.8206393123, green: 0.8206391931, blue: 0.8206391931, alpha: 1)
         return label
     }()
@@ -299,7 +269,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "312 Gb"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -308,7 +277,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "33 Mb"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -317,7 +285,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "12 Mb"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -325,6 +292,13 @@ class ViewController: UIViewController {
     
     
     //MARK: - all photo button
+    lazy var allPhotosButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var allPhotoLabel: UILabel = {
         let label = UILabel()
         label.text = "ALL \n PHOTOS"
@@ -344,15 +318,17 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var allPhotosButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+   
     
     
     //MARK: - all video button
+    lazy var allVideosButton: UIButton = {
+        let butt = UIButton(type: .system)
+        butt.backgroundColor = .white
+        butt.translatesAutoresizingMaskIntoConstraints = false
+        return butt
+    }()
+    
     lazy var allVideosLabel: UILabel = {
         let label = UILabel()
         label.text = "ALL \n VIDEOS"
@@ -372,20 +348,21 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var allVideosButton: UIButton = {
-        let butt = UIButton()
-        butt.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        butt.translatesAutoresizingMaskIntoConstraints = false
-        return butt
-    }()
+   
     
     
     //MARK: - secret storage button
+    lazy var secretStorageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var secretStorageLabel: UILabel = {
         let label = UILabel()
         label.text = "SECRET \n STORAGE"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = #colorLiteral(red: 0.2954347432, green: 0.312394917, blue: 0.6748702526, alpha: 1)
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -400,12 +377,7 @@ class ViewController: UIViewController {
         return image
     }()
     
-    lazy var secretStorageButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "Ellipse 1"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+   
     
     
     
@@ -413,6 +385,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        duplicatesPhotosButton.layer.cornerRadius = duplicatesPhotosButton.bounds.height / 2
+        duplicatesScreenshotsButton.layer.cornerRadius = duplicatesScreenshotsButton.bounds.height / 2
+        duplicatesContactsButton.layer.cornerRadius = duplicatesContactsButton.bounds.height / 2
+        allPhotosButton.layer.cornerRadius = allPhotosButton.bounds.height / 2
+        allVideosButton.layer.cornerRadius = allVideosButton.bounds.height / 2
+        secretStorageButton.layer.cornerRadius = secretStorageButton.bounds.height / 2
     }
     
     
